@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Night Terror | Home</title>
+    <meta name="description" content="About NIght Terror and his projects.">
+    <link type="text/plain" rel="author" href="humans.txt">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <style>
+        body {
+            background-color: #252a60 !important;
+        }
+
+        body.loaded {
+            background-color: #f3f3f3 !important;
+        }
+
+        #page-wrap {
+            opacity: 0;
+        }
+
+        .loaded #page-wrap {
+            opacity: 1;
+        }
+
+        @-webkit-keyframes "stripe" {
+            0% {
+                left: 0;
+                width: 0px;
+            }
+            25% {
+                left: 0;
+                width: 100%;
+            }
+            50% {
+                left: 100%;
+                width: 0px;
+            }
+            75% {
+                left: 0;
+                width: 100%;
+            }
+            100% {
+                left: 0;
+                width: 0px;
+            }
+        }
+
+        @keyframes "stripe" {
+            0% {
+                left: 0;
+                width: 0px;
+            }
+            25% {
+                left: 0;
+                width: 100%;
+            }
+            50% {
+                left: 100%;
+                width: 0px;
+            }
+            75% {
+                left: 0;
+                width: 100%;
+            }
+            100% {
+                left: 0;
+                width: 0px;
+            }
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #252a60;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.7s, visibility 0.7s, z-index 0.7s;
+            z-index: 61
+        }
+
+        #loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .no-js #loader {
+            display: none
+        }
+
+        .loader-content {
+            position: absolute;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 90px;
+            overflow: hidden;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.25s ease;
+            z-index: 70
+        }
+
+        .loader-content.is-hidden {
+            opacity: 0;
+            visibility: hidden
+        }
+
+        .loader-content>* {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .stripe-loader {
+            width: 100%;
+            height: 90px
+        }
+
+        .stripe {
+            height: 30px;
+            width: 0;
+            background: #ffffff;
+            position: relative;
+            margin: 0
+        }
+
+        .stripe:first-child {
+            -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite;
+            animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) infinite
+        }
+
+        .stripe:nth-child(2) {
+            -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.1s infinite;
+            animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.1s infinite
+        }
+
+        .stripe:nth-child(3) {
+            -webkit-animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.2s infinite;
+            animation: stripe 1.5s cubic-bezier(0.694, 0.048, 0.335, 1) 0.2s infinite
+        }
+
+        #loader-after {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #1c1d25;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.7s, visibility 0.7s, z-index 0.7s;
+            z-index: 62
+        }
+
+        #loader-after.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1
+        }
+    </style>
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="canonical" href="" itemprop="url">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Night Terror | DIscord Bot Developer">
+    <meta name="google-site-verification" content="Vv6Ab5p4eW3hXGhlz5FEzlS7BAR-3yL3s6Hwt0XRTTs">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#191a21">
+    <meta name="theme-color" content="#191a21">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:image" content="social-image.jpg">
+    <meta property="og:description" content="Night Terror's POrtfolio and Projects">
+    <meta property="og:site_name" content="Site Name">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="Night Terror's POrtfolio and Projects">
+    <meta name="twitter:image" content="social-image.jpg">
+    <link href="" rel="publisher">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="Night Terror's POrtfolio and Projects">
+    <meta itemprop="image" content="social-image.jpg">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+    <div id="loader-after"></div>
+    <div id="page-transition">
+        <div class="page-transition-content">
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-transition-after"></div>
+    <div id="page-wrap">
+        <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="main-navigation">
+            <div class="content nav-content"><a href="/" data-destination="home" itemprop="url" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" id="my-svg" width="256" height="256" viewbox="0 0 256 256"><path fill="#FFF" d="M53.2 145.1l81.9-71.7h-34.3L19 145.1l102.8 90h34.3l-102.9-90"></path><g fill="#FFF"><path d="M145.3 145.1l36-31.6s.8-.7 1.1-1l2.4-2.4c8.5-10.3 13.3-23.3 13.3-36.7 0-31.8-25.8-57.7-57.6-57.7l-111.1.1L7.2 38.6l111.4-.1h21.9c19.2 0 34.8 15.6 34.8 34.8 0 8.2-2.7 15.8-8 22.2-1 1.3-8.3 7.3-8.3 7.3l-12.4 10.6-35.6 31.7 102.9 90h34.3l-102.9-90zm33.4-31.7h.2-.2z"></path><path d="M252.8 236.9h-39.6l-.5-.4-104.4-91.3 37.1-33 12.5-10.6c3.5-2.9 7.5-6.3 8.1-7 5-6 7.6-13.3 7.6-21.1 0-18.2-14.8-33.1-33.1-33.1H3L28.6 14h115.8l-.1.1c31 2 55.6 27.8 55.6 59.3 0 13.6-4.9 27.1-13.7 37.8-.5.6-2.2 2.3-2.6 2.6-.3.3-1.2 1-1.2 1l-.5.4-34 29.8 104.9 91.9zm-38.3-3.5h29l-100.9-88.3 34.1-29.9h-2.2l3.6-3.5h1v1.5l1.6-1.4c.2-.2.4-.4.6-.5.4-.3 1.9-1.9 2.2-2.2 8.3-10.1 12.9-22.8 12.9-35.6 0-30.8-25.1-55.9-55.9-55.9h-3.9l-106.5-.1-18.8 19.4 109-.1h20.1c20.2 0 36.6 16.4 36.6 36.6 0 8.6-2.9 16.6-8.4 23.3-1 1.3-7.3 6.5-8.5 7.5l-12.4 10.6-34.1 30.3 100.9 88.3z"></path><g><path d="M249.3 235.5h-35.5l-.1-.1-103.2-90.3.3-.3 35.6-31.7 12.4-10.6c2.5-2.1 7.5-6.2 8.3-7.2 5.1-6.2 7.9-13.8 7.9-21.9 0-19-15.4-34.4-34.4-34.4H6.2l23-23.7h.2l112.1-.1c31.6.5 57.1 26.4 57.1 58.1 0 13.3-4.8 26.5-13.4 37-.4.5-2.1 2.2-2.4 2.5-.3.3-1.1 1-1.1 1l-.1.1-35.5 31.2 103.2 90.4zm-35.3-.8h33l-102.4-89.6 36.4-32c.2-.2.7-.6 1-.9.3-.3 2-1.9 2.4-2.4 8.5-10.3 13.2-23.3 13.2-36.4 0-31.5-25.7-57.2-57.2-57.3h-1l-110 .1L8 38.2l111-.1h21.5c19.4 0 35.2 15.8 35.2 35.2 0 8.3-2.8 16-8 22.4-1 1.3-8.1 7.1-8.4 7.3l-12.4 10.6-35.2 31.4L214 234.7zm-35-120.9h-1.4l1-.8h.4V113.8z"></path><path d="M253.9 237.3H213l-.5-.4-104.8-91.7 1.8-1.6 35.6-31.7 12.5-10.6c4-3.3 7.5-6.4 8-7 4.9-5.9 7.5-13.1 7.5-20.8 0-18-14.7-32.7-32.7-32.7H2l26.4-27.2 117.2-.1-.2.2c30.6 2.6 54.8 28.5 54.8 59.6 0 13.7-4.9 27.3-13.8 38.1-.5.6-2.3 2.4-2.6 2.7-.3.3-1.2 1-1.2 1l-.5.4-33.6 29.5 105.4 92.3zm-39.2-4.3h27.7L142 145.1l33.6-29.5h-3.1l4.7-3.8.1-2.6 1.8 2 1.4.1c.2-.1.3-.3.4-.4.4-.3 1.9-1.9 2.2-2.2 8.3-10 12.8-22.6 12.8-35.3 0-30.6-24.9-55.5-55.5-55.5H30.3l-18 18.5 108.4-.1h19.7c20.4 0 37 16.6 37 37 0 8.7-2.9 16.8-8.4 23.5-.7.9-3.5 3.4-8.5 7.5L148 115.1l-33.7 30L214.7 233z"></path></g></g></svg><span itemprop="name" class="visual-hide">Home</span><span aria-label="Riccardo Zanutta's Logo">Riccardo Zanutta's Logo</span></a>
+                <div
+                    aria-label="Mobile Menu" class="nav-toggle"><span class="menu-trigger"><i class="menu-trigger-bar top"></i><i class="menu-trigger-bar middle"></i><i class="menu-trigger-bar bottom"></i></span></div>
+            <ul class="nav-links">
+                <li itemprop="name"><a href="#case-studies" data-scroll itemprop="url" class="no-smoothState no-single-work">Projects</a></li>
+                <li class="in-single-work"><a href="/" data-destination="home" rel="nofollow"><span aria-label="Back" class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="476.2" height="476.2" viewbox="174 -174.2 476.2 476.2"><path d="M244.6 134.5l21.2-21.2-34.4-34.4h418.8v-30H231.4l34.4-34.4-21.2-21.2L174 63.9"></path></svg></span>Turn Back Home</a></li>
+                <li
+                    class="in-single-work"><a href="" id="all-works" rel="nofollow" class="no-smoothState">All Works</a></li>
+                    <li><a href="/" class="no-smoothState open-contact">Contact</a></li>
+                    <li class="no-single-work"><a href="#" id="change-theme" class="no-smoothState no-single-work"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 285.919 285.919"><path d="M142.959 0C64.131 0 0 64.132 0 142.96s64.131 142.959 142.959 142.959 142.96-64.131 142.96-142.959S221.787 0 142.959 0zm0 260.919V25c65.043 0 117.96 52.917 117.96 117.96 0 65.043-52.917 117.959-117.96 117.959z"></path></svg></a></li>
+            </ul>
+    </div>
+    </nav>
+    <nav class="mobile-menu"><span aria-label="Close" class="close-trigger"><i class="close-trigger-bar left"></i><i class="close-trigger-bar right"></i></span>
+        <ul class="mobile-nav-links">
+            <li><a href="/" data-destination="home">Home</a></li>
+            <li class="in-single-work"><a href="" id="all-works" rel="nofollow" class="no-smoothState">All Works</a></li>
+            <li><a href="#case-studies" data-scroll class="no-smoothState no-single-work">Case Studies</a></li>
+            <li><a href="" class="no-smoothState open-contact">Contact</a></li>
+        </ul>
+        <ul class="nav-social-stripe">
+            <li><a href="https://github.com/NightTerror5293" target="_blank" rel="noopener" aria-label="Github"><svg xmlns="http://www.w3.org/2000/svg" width="438.549" height="438.549" viewbox="0 0 438.549 438.549"><path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736 15.166 259.057 5.365 219.27 5.365c-39.78 0-76.47 9.804-110.062 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.853 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.42-1.996 2.474-2.282 3.71-5.14 3.71-8.562 0-.57-.05-5.708-.144-15.417-.098-9.71-.144-18.18-.144-25.406l-6.567 1.136c-4.187.767-9.47 1.092-15.846 1-6.375-.09-12.992-.757-19.843-2-6.854-1.23-13.23-4.085-19.13-8.558-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.9-9.233-8.992-14.56-4.093-5.33-8.232-8.944-12.42-10.847l-1.998-1.43c-1.332-.952-2.568-2.1-3.71-3.43-1.143-1.33-1.998-2.663-2.57-3.997-.57-1.335-.097-2.43 1.428-3.29 1.525-.858 4.28-1.275 8.28-1.275l5.708.853c3.807.763 8.516 3.042 14.133 6.85 5.615 3.807 10.23 8.755 13.847 14.843 4.38 7.807 9.657 13.755 15.846 17.848 6.184 4.093 12.42 6.136 18.7 6.136 6.28 0 11.703-.476 16.273-1.423 4.565-.95 8.848-2.382 12.847-4.284 1.713-12.758 6.377-22.56 13.988-29.41-10.847-1.14-20.6-2.857-29.263-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.98-3.9-12.373-5.852-26.647-5.852-42.825 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.38-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.284 18.794 7.953 23.84 10.995 5.046 3.04 9.09 5.618 12.135 7.708 17.706-4.947 35.977-7.42 54.82-7.42s37.116 2.473 54.822 7.42l10.85-6.85c7.418-4.57 16.18-8.757 26.26-12.564 10.09-3.806 17.803-4.854 23.135-3.14 8.562 21.51 9.325 40.923 2.28 58.24 15.035 16.18 22.558 35.788 22.558 58.818 0 16.178-1.958 30.497-5.853 42.966-3.9 12.47-8.94 22.457-15.125 29.98-6.19 7.52-13.9 13.85-23.13 18.985-9.233 5.14-18.183 8.85-26.84 11.135-8.663 2.286-18.416 4.004-29.264 5.146 9.894 8.563 14.842 22.078 14.842 40.54v60.237c0 3.422 1.19 6.28 3.572 8.562 2.38 2.278 6.136 2.95 11.276 1.994 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.16 41.826-81.126 41.826-128.906-.01-39.77-9.818-76.454-29.414-110.05z"></path></svg></a></li>
+        </ul>
+    </nav>
+    <header id="top" class="main-hero">
+        <div class="main-hero-text">
+            <div class="content">
+                <div class="text-loading-mask">
+                    <div class="text-loading-overlay"></div>
+                    <h1 itemprop="author" class="main-hero-title">Night Terror</h1>
+                </div>
+                <div>
+                    <div class="text-loading-mask">
+                        <div style="transition-delay: 0.1s;" class="text-loading-overlay"></div>
+                        <h3 itemprop="specialty" class="main-hero-subtitle h5">Discord Bot developer</h3>
+                    </div>
+                </div>
+                <div>
+                    <div style="width: 175px;" class="text-loading-mask">
+                        <div style="transition-delay: 0.15s;" class="text-loading-overlay"></div><a href="" class="the-button call-to-button no-smoothstate open-contact"><span class="button-text">My Projects</span><div class="button-mask"></div><span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 476.213 476.213"><path d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607"></path></svg></span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cookie-banner"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 416.991 416.991"><path d="M187.41 101.165c-1.592-.916-3.403-1.4-5.24-1.4-3.738 0-7.222 2.01-9.1 5.262-2.884 5.01-1.157 11.44 3.862 14.338 1.59.916 3.402 1.4 5.238 1.4 3.74 0 7.224-2.01 9.1-5.262 2.885-5.01 1.158-11.44-3.86-14.338zM110.257 171.672c-1.835 0-3.646.484-5.258 1.412-5.008 2.898-6.728 9.33-3.842 14.327 1.868 3.246 5.354 5.262 9.1 5.263 1.836 0 3.647-.484 5.25-1.407 2.43-1.402 4.165-3.665 4.892-6.373.727-2.71.354-5.542-1.05-7.97-1.87-3.24-5.354-5.25-9.093-5.25zM136.574 269.904c-5.79 0-10.5 4.71-10.5 10.5s4.71 10.5 10.5 10.5 10.5-4.71 10.5-10.5-4.71-10.5-10.5-10.5zM240.07 297.647c-1.598-.927-3.42-1.417-5.266-1.417-3.73 0-7.208 2.003-9.1 5.262-2.885 5.01-1.158 11.44 3.833 14.322 1.598.926 3.42 1.416 5.266 1.416 3.732 0 7.214-2.006 9.1-5.262 1.4-2.43 1.77-5.257 1.04-7.963-.727-2.712-2.47-4.975-4.872-6.358zM306.718 224.323c-1.836 0-3.647.484-5.25 1.407-2.433 1.404-4.17 3.672-4.895 6.384-.725 2.712-.348 5.544 1.045 7.947 1.868 3.246 5.355 5.262 9.1 5.263 1.836 0 3.647-.484 5.25-1.407 2.433-1.404 4.17-3.672 4.894-6.384.725-2.712.348-5.544-1.045-7.947-1.868-3.246-5.354-5.262-9.1-5.262z"></path><path d="M416.97 206.596l-.013-.83c-.064-5.28-4.222-9.6-9.494-9.865-14.875-.75-28.007-9.638-34.27-23.192-1.245-2.694-3.623-4.696-6.49-5.465-2.866-.77-5.925-.224-8.352 1.487-6.705 4.73-14.926 7.335-23.145 7.336-6.964 0-13.858-1.854-19.935-5.363-13.458-7.77-21.242-22.804-19.83-38.3.27-2.955-.79-5.878-2.888-7.976-2.1-2.1-5.032-3.152-7.977-2.89-1.195.11-2.41.165-3.614.165-14.27 0-27.56-7.662-34.682-19.996-7.77-13.458-6.994-30.37 1.976-43.084 1.71-2.425 2.257-5.485 1.488-8.352-.768-2.867-2.77-5.245-5.464-6.49-13.548-6.262-22.434-19.387-23.188-34.254-.268-5.27-4.583-9.424-9.858-9.492l-.816-.013c-.64-.01-1.278-.02-1.92-.02C93.53 0 0 93.53 0 208.496s93.53 208.496 208.496 208.496 208.495-93.53 208.495-208.496c0-.635-.01-1.267-.02-1.9zM208.496 396.99C104.56 396.99 20 312.434 20 208.497c0-101.888 81.258-185.154 182.372-188.398 3.158 14.763 11.764 27.746 24.107 36.418-8.064 17.495-7.342 38.18 2.48 55.19 9.77 16.925 27.277 27.985 46.566 29.748 1.76 19.188 12.73 36.746 29.744 46.57 9.114 5.262 19.466 8.043 29.936 8.042 8.82 0 17.392-1.897 25.258-5.544 8.676 12.343 21.66 20.947 36.427 24.102-3.24 101.113-86.506 182.367-188.394 182.367z"></path></svg>
+            <p>This website uses <a href="/privacy">cookies.</a> - <span class="confirm-cookies">Dismiss</span></p>
+        </div>
+        <div id="shapes-mask">
+            <!-- triangle--><svg xmlns="http://www.w3.org/2000/svg" width="37.196" height="32.213" viewbox="0 0 37.196 32.213"><symbol id="triangle"><svg xmlns="http://www.w3.org/2000/svg" width="25.675" height="22.236" viewbox="0 0 25.675 22.236"><path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10" d="M12.837 3l5.12 8.868 5.12 8.868H2.597l5.12-8.868z"></path></svg></symbol>
+            </svg>
+            <!-- semi circle--><svg xmlns="http://www.w3.org/2000/svg" width="29.093" height="14.546" viewbox="0 0 29.093 14.546"><symbol id="semiCircle"><path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10" d="M1.5 14.546C1.5 7.34 7.34 1.5 14.547 1.5c7.205 0 13.046 5.84 13.046 13.046"></path></symbol></svg>
+            <!-- spring--><svg xmlns="http://www.w3.org/2000/svg" width="17.046" height="36.016" viewbox="0 0 17.046 36.016"><symbol id="spring"><path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10" d="M9.945 34.614S1.46 31.38 1.5 23.92s11.73-4.797 11.73-4.797S3.82 16.708 4.18 8.77s12.784-7.255 12.784-7.255"></path></symbol></svg>
+            <!-- line--><svg xmlns="http://www.w3.org/2000/svg" width="25.675" height="22.236" viewbox="0 0 25.675 22.236"><symbol id="line"><path fill="none" stroke="#CF4981" stroke-width="3" stroke-miterlimit="10" d="M4.92 2.514L21.964 19.56"></path></symbol></svg>
+            <svg
+                width="25px" height="25px" class="layer1 p1">
+                <use xlink:href="#triangle" class="yellow"></use>
+                </svg><svg width="28px" height="28px" class="layer1 p2"><use xlink:href="#semiCircle" class="yellow"></use></svg><svg width="25px" height="25px" class="layer2 p3"><use width="25px" height="25px" xlink:href="#triangle" class="aqua"></use></svg>
+                <svg
+                    class="layer1 p4">
+                    <use xlink:href="#triangle" class="pink"></use>
+                    </svg><svg width="28px" height="28px" class="layer1 p5"><use xlink:href="#semiCircle" class="aqua"></use></svg><svg width="36px" height="36px" class="layer2 p6"><use xlink:href="#spring" class="pink"></use></svg><svg width="36px" height="36px"
+                        class="layer2 p7"><use xlink:href="#spring" class="pink"></use></svg><svg width="22px" height="22px" class="layer2 p8"><use xlink:href="#line" class="aqua"></use></svg><svg width="22px" height="22px" class="layer1 p9"><use xlink:href="#line" class="aqua"></use></svg>
+                    <svg
+                        width="22px" height="22px" class="layer2 p10">
+                        <use xlink:href="#line" class="yellow"></use>
+                        </svg><svg width="28px" height="28px" class="layer1 p11"><use xlink:href="#semiCircle" class="aqua"></use></svg></div>
+        <div itemscope="primaryImageOfPage" class="logo-mask"><svg id="logo-anim" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewbox="0 0 256 256"><style>.st0{clip-path:url(#XMLID_8_);fill:none;stroke:url(#XMLID_9_);stroke-width:70.344;stroke-miterlimit:10;} .st1{clip-path:url(#XMLID_11_);fill:none;stroke:url(#XMLID_12_);stroke-width:70.344;stroke-miterlimit:10;}</style><g id="XMLID_10_"><defs><path id="XMLID_4_" d=""></path></defs><clippath id="XMLID_8_"><use xlink:href="#XMLID_4_" overflow="visible"></use></clippath><lineargradient id="XMLID_9_" gradientunits="userSpaceOnUse" x1="-169.589" y1="333.156" x2="21.795" y2="333.156" gradienttransform="matrix(1 0 0 -1 156 491)"><stop offset="0" stop-color="#2D2E83"></stop><stop offset="1" stop-color="#1D71B8"></stop></lineargradient><path id="XMLID_3_" d="" class="st0"></path></g><g id="XMLID_6_"><g id="XMLID_7_"><defs><path id="XMLID_2_" d=""></path></defs><clippath id="XMLID_11_"><use xlink:href="#XMLID_2_" overflow="visible"></use></clippath><lineargradient id="XMLID_12_" gradientunits="userSpaceOnUse" x1="-156.508" y1="354.122" x2="115.621" y2="354.122" gradienttransform="matrix(1 0 0 -1 156 491)"><stop offset="0" stop-color="#2D2E83"></stop><stop offset="1" stop-color="#1D71B8"></stop></lineargradient><path id="XMLID_1_" d="" class="st1"></path></g></g></svg></div>
+        <ul
+            itemscope itemtype="http://schema.org/Organization" class="social-vertical-stripe"><span itemprop="name" class="visual-hide">Night Terror</span>
+            <link itemprop="url" href="http://riccardozanutta.com/">
+            <link itemprop="logo" href="http://riccardozanutta.com/icons/logo.svg">
+            <li><a href="https://github.com/NightTerror5293" target="_blank" rel="noopener" itemprop="sameAs"><svg xmlns="http://www.w3.org/2000/svg" width="438.549" height="438.549" viewbox="0 0 438.549 438.549"><path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736 15.166 259.057 5.365 219.27 5.365c-39.78 0-76.47 9.804-110.062 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.853 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.42-1.996 2.474-2.282 3.71-5.14 3.71-8.562 0-.57-.05-5.708-.144-15.417-.098-9.71-.144-18.18-.144-25.406l-6.567 1.136c-4.187.767-9.47 1.092-15.846 1-6.375-.09-12.992-.757-19.843-2-6.854-1.23-13.23-4.085-19.13-8.558-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.9-9.233-8.992-14.56-4.093-5.33-8.232-8.944-12.42-10.847l-1.998-1.43c-1.332-.952-2.568-2.1-3.71-3.43-1.143-1.33-1.998-2.663-2.57-3.997-.57-1.335-.097-2.43 1.428-3.29 1.525-.858 4.28-1.275 8.28-1.275l5.708.853c3.807.763 8.516 3.042 14.133 6.85 5.615 3.807 10.23 8.755 13.847 14.843 4.38 7.807 9.657 13.755 15.846 17.848 6.184 4.093 12.42 6.136 18.7 6.136 6.28 0 11.703-.476 16.273-1.423 4.565-.95 8.848-2.382 12.847-4.284 1.713-12.758 6.377-22.56 13.988-29.41-10.847-1.14-20.6-2.857-29.263-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.98-3.9-12.373-5.852-26.647-5.852-42.825 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.38-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.284 18.794 7.953 23.84 10.995 5.046 3.04 9.09 5.618 12.135 7.708 17.706-4.947 35.977-7.42 54.82-7.42s37.116 2.473 54.822 7.42l10.85-6.85c7.418-4.57 16.18-8.757 26.26-12.564 10.09-3.806 17.803-4.854 23.135-3.14 8.562 21.51 9.325 40.923 2.28 58.24 15.035 16.18 22.558 35.788 22.558 58.818 0 16.178-1.958 30.497-5.853 42.966-3.9 12.47-8.94 22.457-15.125 29.98-6.19 7.52-13.9 13.85-23.13 18.985-9.233 5.14-18.183 8.85-26.84 11.135-8.663 2.286-18.416 4.004-29.264 5.146 9.894 8.563 14.842 22.078 14.842 40.54v60.237c0 3.422 1.19 6.28 3.572 8.562 2.38 2.278 6.136 2.95 11.276 1.994 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.16 41.826-81.126 41.826-128.906-.01-39.77-9.818-76.454-29.414-110.05z"></path></svg></a></li>
+            </ul>
+            <a href="#case-studies" data-scroll class="hero-go-next no-smoothstate">
+                <div class="go-next-label">Projects</div><span class="the-arrow arrow-down"></span></a>
+    </header>
+    <main>
+        <div class="some-shapes" name="projects">
+            <div data-rellax-speed="-1" class="circle1 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70"><circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1" r="28.5"></circle></svg></div>
+            <div data-rellax-speed="1" class="square1 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100"><path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path></svg></div>
+            <div data-rellax-speed="1" class="triangle1 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70"><path fill="none" stroke="#0FE851" stroke-width="8" stroke-miterlimit="10" d="M12.6 56l22.8-39.5L58.2 56z"></path></svg></div>
+            <div data-rellax-speed="-1" class="cross1 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180"><path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path><path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path></svg></div>
+            <div
+                data-rellax-speed="-1.3" class="circle2 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70"><circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1" r="28.5"></circle></svg></div>
+        <div data-rellax-speed="-1" class="square2 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100"><path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path></svg></div>
+        <div data-rellax-speed="1" class="triangle2 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70"><path fill="none" stroke="#0FE851" stroke-width="8" stroke-miterlimit="10" d="M12.6 56l22.8-39.5L58.2 56z"></path></svg></div>
+        <div data-rellax-speed="1" class="cross2 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180"><path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path><path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path></svg></div>
+        <div
+            data-rellax-speed="-1" class="square3 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100"><path fill="#A79FFF" d="M88 12v76H12V12h76m9-9H3v94h94V3z"></path></svg></div>
+            <div data-rellax-speed="1.3" class="circle3 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewbox="0 0 70 70"><circle fill="none" stroke="#6107EF" stroke-width="9" stroke-miterlimit="10" cx="35" cy="35.1" r="28.5"></circle></svg></div>
+            <div data-rellax-speed="-1" class="cross3 rellax"><svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewbox="26 -26 180 180"><path fill="#ffda77" d="M183.208 103.01l-28.143 28.144L49 25.09 77.143-3.055z"></path><path fill="#ffda77" d="M183.208 25.09L77.143 131.153 49 103.01 155.065-3.053z"></path></svg></div>
+            </div>
+            <section id="case-studies" itemscope="" itemprop="mainContentOfPage" class="case-studies-section">
+                <div class="section-mask"></div>
+                <div class="content">
+                    <div class="section-text-mask">
+                    </div>
+                    <div class="section-text-mask" name="projects">
+                        <h2 class="h3 section-title" name="projects" >Latest Projects</h2>
+                    </div>
+                    <ul class="case-studies-list">
+                        <li itemscope itemtype="http://schema.org/CreativeWork">
+                            <a href="" id="cerasa" style="background-image: url('discord-bot.jpeg');" data-destination="cerasa" itemprop="url" class="case-study">
+                                <div class="case-study-mask"></div>
+                                <div class="case-study-reveal-mask"></div>
+                                <div class="case-study-mask-number">
+                                    <div class="case-study-mask-back">01</div>
+                                    <div class="case-study-mask-front">
+                                        <div data-index="01" class="case-study-mask-overlay">01</div>
+                                    </div>
+                                </div>
+                                <div class="case-study-text-section">
+                                    <h3 itemprop="name" class="h2 case-study-title">Night Terror Bot</h3>
+                                    <h5 itemprop="description" class="case-study-subtitle">A Bot Made for simply managing your whole server, securly and easily. Simply a general purpose bot.</h5><button class="the-button call-to-button"><span class="button-text">Add Me!</span><div class="button-mask"></div><span class="button-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 476.213 476.213"><path d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607"></path></svg></span></button></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section mobile-only">
+                <div class="section-mask"></div>
+                <div class="content">
+                    <div class="button-content text-center"><button class="the-button button-big open-contact">Contact me</button></div>
+                </div>
+            </section>
+            <section id="experiments" class="experiments-section">
+                <div class="section-mask"></div>
+                <div class="inner-container">
+                    <div class="section-text-mask">
+                        <h4 class="h5 section-subtitle">Experiments &amp; Open Source</h4>
+                    </div>
+                    <div class="section-text-mask">
+                        <h2 class="h3 section-title">Developement is Awesome</h2>
+                    </div>
+                </div>
+                </div>
+            </section>
+    </main>
+    </div>
+    <footer itemscope itemtype="http://schema.org/WPFooter" class="footer">
+        <div class="content"><a href="#top" data-scroll class="footer-logo no-smoothstate"><img src="icons/logo-white.svg" alt="Riccardo Zanutta's Personal Logo"><div class="footer-logo-top-label">Top<div class="footer-logo-top-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 31.479 31.479"><path d="M26.477 10.274a1.112 1.112 0 0 1 0 1.587 1.12 1.12 0 0 1-1.571 0l-8.047-8.047v26.555c0 .619-.492 1.111-1.111 1.111a1.118 1.118 0 0 1-1.127-1.111V3.813L6.59 11.86c-.444.429-1.159.429-1.587 0a1.112 1.112 0 0 1 0-1.587L14.955.321a1.12 1.12 0 0 1 1.571 0l9.951 9.953z" fill="#1e201d"></path></svg></div></div></a>
+            <div
+                class="inner-container text-center">
+                <ul class="footer-links">
+                    <li><a href="https://github.com/NightTerror5293" target="_blank" rel="noopener">Github</a></li>
+                </ul>
+        </div>
+        <div class="footer-copy">&copy;
+            <script>
+                document.write(new Date().getFullYear() + ' ');
+            </script>Nighet Terror - Bot Developer - <a href="mailto:" class="no-smoothState">Contact</a></div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\\/script>');
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-62939051-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="js/application.js"></script>
+</body>
+
+</html>
